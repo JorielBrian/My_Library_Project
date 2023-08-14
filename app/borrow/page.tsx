@@ -1,8 +1,10 @@
-export default () => {
-    return (
-        <main>
+import Borrowbook from "@/components/Borrowbook";
+import { getBooks } from "@/modules/fetchbook";
 
-        </main>
+export default async () => {
+    const books = await getBooks();
+    return (
+        <Borrowbook books = {books} />
     );
 }
 

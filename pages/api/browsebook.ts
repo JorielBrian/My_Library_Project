@@ -10,15 +10,14 @@ type bookProps = {
 export default async ( req: NextApiRequest, res: NextApiResponse) => {
     try {
         const book: bookProps = JSON.parse(req.body)
-        if(req.method === 'GET'){
-            const data = await prisma.book.findUnique({
-                where: {
-                    id: book.id
-                }
-            })
-            return res.status(200).json(data)
-        }
+        const data = await prisma.book.findUnique({
+            where: {
+                id: book.id
+            }
+        })
+        console.log(res.json(data))
+        return res.status(200).json(data)
     } catch (err){
-        return res.status(500).json({message: "Error creating a new book"})
+        return res.status(500).json(err)
     }
 }

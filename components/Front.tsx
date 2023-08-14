@@ -1,11 +1,9 @@
-import Books from "./Books";
 import Welcome from "./Welcome";
 
 const Front = () => {
     return (
-        <main>
+        <main className="w-11/12 h-full m-10">
             <Welcome />
-            <Books />
         </main>
     );
 }
