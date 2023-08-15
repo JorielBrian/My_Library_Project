@@ -8,6 +8,7 @@ export default (props: any) => {
     const [ address, setAddress ] = useState('');
     const [ contact, setContact ] = useState('');
 
+    //SUBMITTING BORROWER DETAILS TO THE API
     async function submitborrower() {
         const selectedbook = props.books.find((book: any) => book.title === title)
         const id = selectedbook.id
@@ -23,7 +24,7 @@ export default (props: any) => {
             <form action='/borrow' onSubmit={submitborrower} className="flex flex-wrap w-5/6 sm:w-1/2 md:w-7/12 lg:w-1/2 p-4 mx-auto bg-orange-500 border-8 border-orange-900 rounded-lg">
                 <h1 className="w-fit m-auto text-4xl font-bold">Borrow a Book</h1>
                 <label className="w-full font-bold" htmlFor="title">Book:</label>
-                <select name="title" className=" text-gray-400 border-4 border-orange-700 rounded-md" onChange={(e) => setTitle(e.target.value)} required>
+                <select name="title" className=" text-black border-4 border-orange-700 rounded-md" onChange={(e) => setTitle(e.target.value)} required>
                     <option value="">Select a book</option>
                     {props.books.map((book:any) => (
                         <option value={book.title} className="text-black font-semibold">{book.title}</option>

@@ -1,33 +1,28 @@
 'use client'
-
-//import { useRouter, NextRouter } from "next/router";
 import { useState } from "react";
 import Link from "next/link";
 
 const Borrowers = (props: any) => {
     const [ searchborrower, setSearchborrower ] = useState('');
     const [ borrowers, setBorrowers ] = useState(props.borrowers);
-    /*const router = useRouter();
-    const refreshData = () =>{
-        router.replace(router.asPath);
-    }*/
+    
+    //HANDLE RETURN BOOK
     const handleReturn = async (borrowerid: number, title: string) =>{
         window.location.reload();
         const selectedbook = props.books.find((book: any) => book.title === title)
         const bookid = selectedbook.id;
         const date = new Date();
-        //console.log(new Date());
         const data = await fetch(`/api/returnbook`, {
             method: 'POST',
             body: JSON.stringify({ borrowerid, bookid, date })
-        })/*.then(()=>{
-            refreshData();
-        })*/
+        })
         const res = await data.json();
         if(!res.ok){
             console.log(res.message);
         }
     }
+
+    //HANDLE SEARCH BORROWER
     const onSearchborrower = (event: React.FormEvent) =>{
         event.preventDefault();
         if(searchborrower.length === 0){

@@ -25,3 +25,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.heading-title:hover h1{
+  width: auto;
+  transition: ease-out;
+  transition-duration: 500ms;
+}

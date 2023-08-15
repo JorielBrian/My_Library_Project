@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 //import axios from 'axios';
 
 export default () =>{
+    //STORING INPUTS FOR THE BOOK DETAILS
     const [ title, setTitle ] = useState('');
     const [ isbn, setIsbn ] = useState('');
     const [ intro, setIntro ] = useState('');
@@ -10,6 +11,7 @@ export default () =>{
     const [ author, setAuthor ] = useState('');
     const [ quantity, setQuantity ] = useState(0);
 
+    //SUBMIT BUTTON FUNCTION
     async function submitBook() {
         const data = await fetch(`/api/createbook`,{
             method: 'POST',

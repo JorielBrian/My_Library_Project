@@ -4,6 +4,8 @@ import { PrismaClient } from "@prisma/client";
 export default async({ params }: { params: { bookId: number } }) => {
     const prisma = new PrismaClient();
     const id = Number(params.bookId)
+
+    //GETTING A SINGLE BOOK TO PREVIEW ON THE SCREEN
     async function getBook(){
         const data = await prisma.book.findUnique({
             where: {
@@ -12,6 +14,7 @@ export default async({ params }: { params: { bookId: number } }) => {
         })
         return data
     }
+    //STORING FETCHED BOOK
     const book = await getBook();
     return(
         <main className="w-5/6 mx-auto my-16">
@@ -23,8 +26,8 @@ export default async({ params }: { params: { bookId: number } }) => {
                 <p className="my-5 text-sm">{book.intro}</p>
                 <p className="my-5 text-sm">{book.content}</p>
             </div> }
-            <Link href={`/books`} className="p-2 mr-2 font-bold bg-orange-500 border-8 border-orange-800 rounded-md">Go to Books</Link>
-            { book && <Link href={`/borrow`} className="p-2 ml-2 font-bold bg-orange-500 border-8 border-orange-700 rounded-md">Borrow</Link> }
+            <Link href={`/books`} className="p-2 mr-2 font-bold bg-orange-500 border-8 border-orange-800 rounded-md hover:bg-orange-600 hover:scale-110 active:bg-orange-800">Go to Books</Link>
+            { book && <Link href={`/borrow`} className="p-2 ml-2 font-bold bg-orange-500 border-8 border-orange-700 rounded-md hover:bg-orange-600 hover:scale-110 active:bg-orange-800">Borrow</Link> }
         </main>
     );
 }
