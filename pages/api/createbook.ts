@@ -34,22 +34,3 @@ export default async ( req: NextApiRequest, res: NextApiResponse) => {
         return res.status(500).json({message: "Error creating a new book"})
     }
 }
-/*
-        const { title, isbn, intro, content, author, quantity } = req.body;
-        const { method } = req;
-        if(method === 'POST'){
-            const data = await prisma.book.create({
-                data: {
-                    title,
-                    isbn,
-                    intro,
-                    content,
-                    published: true,
-                    author,
-                    quantity,
-                    borrow: 0
-                },
-            })
-            return res.status(200).json(data)
-        }
-    */
