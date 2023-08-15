@@ -37,7 +37,7 @@ export default (props: any) => {
                 <textarea className="w-full px -2 m-1 text-black border-4 border-orange-700 rounded-lg" placeholder="Address" name="adrress" value={address} onChange={(e) => setAddress(e.target.value)} required/>
                 <label className="w-full font-bold" htmlFor="contact">Contact:</label>
                 <input className="w-full px -2 m-1 text-black border-4 border-orange-700 rounded-lg" type="text" placeholder="Contact" name="contact" value={contact} onChange={(e) => setContact(e.target.value)} required/>
-                <input className="w-96 p-1 m-2 font-bold bg-orange-400 border-4 border-orange-700 rounded-lg hover:bg-orange-600 active:bg-orange-900" type="submit" value="Borrow" />
+                <input className="w-96 p-1 m-2 font-bold bg-orange-400 border-4 border-orange-700 rounded-lg hover:bg-orange-600 hover:scale-110 active:bg-orange-900" type="submit" value="Borrow" />
             </form>
         </main>
     );
