@@ -8,7 +8,7 @@ export const sampleBoooks = [
         genre: "Fiction",
         total_copies: 20,
         available_copies: 10,
-        description: "A novel set in the Jazz Age that tells the story of Jay Gatsby's unrequited love for Daisy Buchanan.",
+        description: "A novel set in the Jazz Age that tells the story of Jay Gatsby&apos;s unrequited love for Daisy Buchanan.",
         summary: "A classic novel exploring themes of decadence, idealism, resistance to change, social upheaval, and excess."
     },
     {
